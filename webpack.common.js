@@ -16,8 +16,16 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.png$/i,
-        type: "asset.resource",
+        test: /\.jpg$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       {
         test: /\.(?:js|mjs|cjs)$/,

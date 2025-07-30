@@ -1,1 +1,49 @@
 @import "./reset.css";
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("../../public/fonts/montserrat-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+header {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.profile-wrapper {
+  text-align: center;
+  color: white;
+  position: relative;
+  max-width: 30rem;
+}
+.profile-wrapper img {
+  object-fit: cover;
+}
+
+.profile-wrapper h1 {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  bottom: 1px;
+}
+
+.about-me {
+  font-size: 2rem;
+  text-align: center;
+}
