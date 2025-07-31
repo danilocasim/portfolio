@@ -14,34 +14,27 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 3rem;
+section {
+  padding: 3rem;
+  width: 100vw;
 }
 
-.profile-wrapper {
-  padding: 1rem;
+main {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 3rem;
-  padding: 2rem;
-  width: 100vw;
 }
 
 .bg {
   position: absolute;
-  top: -70%;
+  top: -20%;
   object-fit: cover;
-  background-color: rgb(7, 111, 175);
-  height: 100%;
-  width: 100%;
-  transform: scale(2) rotateZ(50deg);
-
+  background-color: rgb(19, 115, 206);
+  height: 70%;
+  width: 100vw;
+  transform: skewY(-10deg);
   z-index: -1;
 }
 
@@ -50,8 +43,10 @@ header {
   text-align: center;
   color: white;
   position: relative;
+  background-color: blue;
   max-width: 30rem;
 }
+
 .profile img {
   object-fit: cover;
 }
@@ -69,4 +64,56 @@ header {
 .about-me {
   font-size: 2rem;
   text-align: center;
+}
+
+.icon {
+  height: auto;
+  width: 4rem;
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+}
+
+.profile-wrapper {
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.projects-wrapper h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: rgb(19, 115, 206);
+  padding: 0rem;
+}
+
+.contact-details {
+  padding: 3rem;
+}
+
+#contactMe {
+  padding: 0;
+}
+
+footer img {
+  display: block;
 }
