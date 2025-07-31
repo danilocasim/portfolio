@@ -12,6 +12,8 @@
 body {
   font-family: "Montserrat", system-ui, sans-serif;
   overflow-x: hidden;
+  display: grid;
+  gap: 3rem;
 }
 
 section {
@@ -29,13 +31,19 @@ main {
 
 .bg {
   position: absolute;
-  top: -20%;
+  top: 0;
   object-fit: cover;
   background-color: rgb(19, 115, 206);
-  height: 70%;
+  height: calc(80% - 1vw);
   width: 100vw;
-  transform: skewY(-10deg);
+  transform: translateY(-40%) skewY(-10deg);
   z-index: -1;
+}
+.profile-wrapper {
+  display: grid;
+  place-content: center;
+  gap: 3rem;
+  place-items: center;
 }
 
 .profile {
@@ -44,10 +52,11 @@ main {
   color: white;
   position: relative;
   background-color: blue;
-  max-width: 30rem;
+  max-width: 25rem;
 }
 
 .profile img {
+  height: 30rem;
   object-fit: cover;
 }
 
@@ -56,13 +65,18 @@ main {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  bottom: 1px;
+  align-items: start;
+  font-size: clamp(3rem, 3vw, 10rem);
+  line-height: 1;
+  bottom: 1rem;
 }
 
 .about-me {
   font-size: 2rem;
+  text-align: justify;
+}
+
+.about-me h2 {
   text-align: center;
 }
 
@@ -76,12 +90,6 @@ main {
   gap: 2rem;
 }
 
-.profile-wrapper {
-  display: grid;
-  place-content: center;
-  place-items: center;
-}
-
 .projects-wrapper h3 {
   font-size: 3rem;
   text-align: center;
@@ -91,14 +99,36 @@ main {
   display: grid;
   place-content: center;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
   gap: 2rem;
 }
 
 .project {
-  max-width: 300px;
   display: flex;
   flex-direction: column;
+}
+
+.project-name {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links img {
+  height: 1.5rem;
+}
+
+.project-description {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.project-description p {
+  text-align: center;
 }
 
 footer {
@@ -106,14 +136,93 @@ footer {
   padding: 0rem;
 }
 
+section#contactMe {
+  padding: 0;
+}
+
 .contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 3rem;
 }
 
-#contactMe {
-  padding: 0;
+.contact-details h4 {
+  font-size: 2.4rem;
 }
 
 footer img {
   display: block;
+  height: auto;
+  width: 100vw;
+}
+
+@media (min-width: 900px) {
+  .profile-wrapper {
+    display: block;
+    max-width: 90vw;
+  }
+
+  .profile {
+    float: left;
+    z-index: 1;
+    margin-right: 2rem;
+  }
+
+  .profile h1 {
+    top: 5rem;
+    transform: translateX(15rem);
+  }
+
+  .about-me {
+    padding: 10rem 2rem;
+    width: 60vw;
+    background-color: white;
+    transform: translateY(10rem);
+  }
+
+  .profile-wrapper .socials {
+    display: none;
+  }
+
+  section#contactMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+  }
+
+  #contactMe .pic {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .profile {
+    height: 100%;
+    margin: 0;
+  }
+
+  .profile img {
+    height: 100%;
+  }
+
+  .profile h1 {
+    height: min-content;
+    bottom: 1px;
+    transform: translateY(25rem);
+  }
+
+  .about-me {
+    padding: 2rem;
+    transform: translateY(0rem);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
