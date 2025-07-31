@@ -109,6 +109,10 @@ main {
   flex-direction: column;
 }
 
+.project-pic img {
+  height: 20rem;
+}
+
 .project-name {
   display: flex;
   justify-content: space-around;
@@ -134,6 +138,7 @@ main {
 
 footer {
   background-color: rgb(19, 115, 206);
+  color: white;
   padding: 0rem;
 }
 
